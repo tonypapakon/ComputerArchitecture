@@ -60,9 +60,17 @@
        
   ``` 250```
 
-**d.Caches**:
+**d.Caches**:64 bytes
 
-**e.Μνήμη**:
+**config.ini**:
+
+**config.json**:
+
+**e.Μνήμη**:2GB, DDR3_1600_8x8
+
+**config.ini**:
+
+**config.json**:
 
 Ερώτημα 3
 Ερώτημα 3a
