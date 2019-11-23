@@ -8,7 +8,7 @@
 
 Χρησιμοποιήσαμε την εντολή που μας δόθηκε για την μελέτη του συστήματος που θα εξομοιώσουμε. Η εντολή εκτελεί ένα precompiled πρόγραμμα hello με τις παραμέτρους για το σύστημα που ορίζει το αρχείο starter_se.py σε Minor model CPU.
 
->$ ./build/ARM/gem5.opt configs/example/arm/starter_se.py --cpu="minor" "tests/test-progs/hello/bin/arm/linux/hello"
+```$ ./build/ARM/gem5.opt configs/example/arm/starter_se.py --cpu="minor" "tests/test-progs/hello/bin/arm/linux/hello"```
 
 Ερώτημα 1
 
@@ -29,30 +29,32 @@
 Στο ερώτημα αυτό θα επαληθεύσουμε τα αποτελέσματα του πρώτου ερωτήματος κάνοντας μελέτη των αρχείων config.ini και config.json και θα παραθέσουμε τα αντίστοιχα πεδία.
 
 **a.CPU**: Minor model CPU
-**config.ini**:
->[system.cpu_cluster.cpus]
 
- >type=MinorCPU
+**config.ini**:
+```[system.cpu_cluster.cpus]```
+
+```type=MinorCPU```
 
 **config.json**:
->"cpus": 
+```"cpus": ```
 
->"type": "MinorCPU"
+```"type": "MinorCPU"```
 
 **b.Συχνότητα Λειτουργίας**: 4GHz
-**config.ini**:
->[system.cpu_cluster.clk_domain]
 
->clock=250
+**config.ini**:
+```[system.cpu_cluster.clk_domain]```
+
+```clock=250```
 
 **config.json**:
->"clk_domain": {
+```"clk_domain": {```
 
-   >"name": "clk_domain",
+  ``` "name": "clk_domain",```
        
-   >"clock": [
+ ```  "clock": [```
        
-   >250
+  ``` 250```
 
 **c.Αριθμός Πυρήνων**:
 
