@@ -1,15 +1,16 @@
-Computer-Architecture-lab1-Intro-to-gem5
+ComputerArchitecture_Lab1 Intro to gem5.
 
 1ο Εργαστήριο Αρχιτεκτονικής Υπολογιστών
 
 Παπακωνσταντίνου Αντώνης ΑΕΜ 8977
+
 Κασιούλης Φίλιππος ΑΕΜ 
 
 Ερωτήματα Πρώτου Μέρους
 
 Εφόσον ολοκληρώθηκε η εγκατάσταση του gem5 και προχωρήσαμε στην διαδικασία του build για ARM επεξεργαστή τρέξαμε τον gem5 σε SystemcallEmulation(SE)mode.Εκτελέσαμε το precompiled πρόγραμμα hello με τις παραμέτρους για το σύστημα που ορίζει το αρχείο starter_se.py για Minor model cpu.Η εντολή που χρησιμοποιήσαμε ήταν αυτή που μας δόθηκε:
 
-    $ ./build/ARM/gem5.opt configs/example/arm/starter_se.py --cpu="minor" "tests/test-progs/hello/bin/arm/linux/hello"
+   ' $ ./build/ARM/gem5.opt configs/example/arm/starter_se.py --cpu="minor" "tests/test-progs/hello/bin/arm/linux/hello" '
 
 και συλλέξαμε τα ζητούμενα από έσας τα οποία παραθέτουμε παρακάτω.
 Ερώτημα 1
