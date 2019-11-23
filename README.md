@@ -30,14 +30,29 @@
 
 **a.CPU**: Minor model CPU
 **config.ini**:
+>[system.cpu_cluster.cpus]
+
  >type=MinorCPU
 
 **config.json**:
 >"cpus": 
 
->"type": "MinorCPU",
+>"type": "MinorCPU"
 
-**b.Συχνότητα Λειτουργίας**:
+**b.Συχνότητα Λειτουργίας**: 4GHz
+**config.ini**:
+>[system.cpu_cluster.clk_domain]
+
+>clock=250
+
+**config.json**:
+>"clk_domain": {
+
+   >"name": "clk_domain",
+       
+   >"clock": [
+       
+   >250
 
 **c.Αριθμός Πυρήνων**:
 
