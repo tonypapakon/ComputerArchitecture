@@ -81,7 +81,7 @@
 
 #### Ερώτημα 3a
 
-Παραθέτουμε το πρόγραμμα που γράψαμε σε C:
+Παραθέτουμε το πρόγραμμα που γράψαμε σε C (επίσης βρίσκεται και στο repository στο git μας):
 
 ```
 #iclude <stdio.h>
@@ -91,4 +91,24 @@ int main(){
 }
 ```
 
+Εκτελέσαμε την εξομοίωση με την εντολή που μας δόθηκε σε MinorCPU model και τα ορίσματα που βρίσκονται στο `se.py`:
 
+```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches tests/test-progs/hello/bin/arm/linux/myprog```
+
+Μελετώντας το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε MinorCPU:
+
+```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+
+```sim_seconds                                  0                       # Number of seconds simulated```
+
+Εκτελέσαμε ξανά την εξομοίωση σε TimingSimpleCPU model αυτή την φορά, με την εντολή:
+
+```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches tests/test-progs/hello/bin/arm/linux/myprog```
+
+Μελετήσαμε ξανά το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε TimingSimpleCPU:
+
+```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+
+```sim_seconds                                  0                       # Number of seconds simulated```
+
+Παρατηρούμε ότι η εξομοίωση με MinorCPU model τρέχει πιο γρήγορα στον εξομοιωτή απ αυτήν του TimingSimpleCPU, το οποίο είναι λογικό αποτέλεσμα καθώς το MinorCPU model χρησιμοποιεί pipeline στην εκτέλεση των εντολών.
