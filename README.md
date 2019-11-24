@@ -61,6 +61,7 @@
 **config.ini**:
 
 ```mem_ranges=0:2147483647```
+
 ```memories=system.mem_ctrls0 system.mem_ctrls1```
 
 **config.json**:
