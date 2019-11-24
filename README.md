@@ -109,7 +109,7 @@ return 0;
 
 Εκτελέσαμε την εξομοίωση με την εντολή που μας δόθηκε σε MinorCPU model και τα ορίσματα που βρίσκονται στο `se.py`:
 
-```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches tests/test-progs/hello/bin/arm/linux/myprogram_arm```
+```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches -c tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετώντας το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε MinorCPU:
 
@@ -119,7 +119,7 @@ return 0;
 
 Εκτελέσαμε ξανά την εξομοίωση σε TimingSimpleCPU model αυτή την φορά, με την εντολή:
 
-```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches tests/test-progs/hello/bin/arm/linux/myprogram_arm```
+```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches -c tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετήσαμε ξανά το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε TimingSimpleCPU:
 
