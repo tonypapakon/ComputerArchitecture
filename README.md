@@ -1,4 +1,4 @@
-![Gem5-Logo](https://arch.cs.ucdavis.edu/assets/images/gem5-logo.png){:height="250px" width="250px"}
+![Gem5-Logo](https://arch.cs.ucdavis.edu/assets/images/gem5-logo.png = 250x250)
 
 # Εργασία Πρώτου Εργαστηρίου Αρχιτεκτονικής Υπολογιστών
 
