@@ -109,13 +109,13 @@ return 0;
 
 Εκτελέσαμε την εξομοίωση με την εντολή που μας δόθηκε σε MinorCPU model και τα ορίσματα που βρίσκονται στο `se.py`:
 
-```$ ./build/ARM/gem5.opt -d random_tim_simple configs/example/se.py --cpu-type=MinorCPU --caches -c lab1/myprogram_arm```
+```$ ./build/ARM/gem5.opt -d random_minor configs/example/se.py --cpu-type=MinorCPU --caches -c lab1/myprogram_arm```
 
 Μελετώντας το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε MinorCPU:
 
-```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+```final_tick                                   43620000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
 
-```sim_seconds                                  0                       # Number of seconds simulated```
+```sim_seconds                                  0.000044                       # Number of seconds simulated```
 
 Εκτελέσαμε ξανά την εξομοίωση σε TimingSimpleCPU model αυτή την φορά, με την εντολή:
 
@@ -123,9 +123,9 @@ return 0;
 
 Μελετήσαμε ξανά το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε TimingSimpleCPU:
 
-```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+```final_tick                                   58444000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
 
-```sim_seconds                                  0                       # Number of seconds simulated```
+```sim_seconds                                  0.000058                       # Number of seconds simulated```
 
 Παρατηρούμε ότι η εξομοίωση με MinorCPU model τρέχει πιο γρήγορα στον εξομοιωτή απ αυτήν του TimingSimpleCPU, το οποίο είναι λογικό αποτέλεσμα καθώς το MinorCPU model χρησιμοποιεί pipeline στην εκτέλεση των εντολών.
 
@@ -141,11 +141,11 @@ return 0;
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
-```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+```final_tick                                   36378000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
 
-```sim_seconds                                  0                       # Number of seconds simulated```
+```sim_seconds                                  0.000036                       # Number of seconds simulated```
 
-Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από 0.000044 σε 0.000036.
 
 **->** Για TimingSimpleCPU model εκτελέσαμε την εντολή:
 
@@ -153,11 +153,11 @@ return 0;
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
-```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+```final_tick                                   42810500                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
 
-```sim_seconds                                  0                       # Number of seconds simulated```
+```sim_seconds                                  0.000043                       # Number of seconds simulated```
 
-Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από 0.000058 σε 0.000043.
 
 **Τεχνολογία Μνήμης: DDR4_2400_16x4**
 
@@ -167,20 +167,20 @@ return 0;
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
-```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+```final_tick                                   42310000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
 
-```sim_seconds                                  0                       # Number of seconds simulated```
+```sim_seconds                                  0.000042                       # Number of seconds simulated```
 
-Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από 0.000044 σε 0.000042.
 
 **->** Για TimingSimpleCPU model εκτελέσαμε την εντολή:
 
-```./build/ARM/gem5.opt random_timsimple_ddr4 configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_16x4 --caches -c lab1/myprogram_arm```
+```./build/ARM/gem5.opt -d random_timsimple_ddr4 configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_16x4 --caches -c lab1/myprogram_arm```
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
-```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+```final_tick                                   58301000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
 
-```sim_seconds                                  0                       # Number of seconds simulated```
+```sim_seconds                                  0.000058                       # Number of seconds simulated```
 
-Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+Δεν παρατηρούμε σ αυτήν την περίπτωση κάποια ιδιαίτερη βελτίωση στον χρόνο εκτέλεσης, από 0.000058 σε 0.000058.
