@@ -103,9 +103,13 @@ return 0;
 }
 ```
 
+Κάνουμε Compile το πρόγραμμα με την εντολή:
+
+```arm-linux-gnueabihf-gcc --static myprogram.c -o myprogram_arm ```
+
 Εκτελέσαμε την εξομοίωση με την εντολή που μας δόθηκε σε MinorCPU model και τα ορίσματα που βρίσκονται στο `se.py`:
 
-```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches tests/test-progs/hello/bin/arm/linux/myprog```
+```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετώντας το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε MinorCPU:
 
@@ -115,7 +119,7 @@ return 0;
 
 Εκτελέσαμε ξανά την εξομοίωση σε TimingSimpleCPU model αυτή την φορά, με την εντολή:
 
-```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches tests/test-progs/hello/bin/arm/linux/myprog```
+```$ ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετήσαμε ξανά το αρχείο stats.txt, παραθέτουμε τα αποτελέσματα για τους χρόνους εκτέλεσης σε TimingSimpleCPU:
 
@@ -133,7 +137,7 @@ return 0;
 
 **->** Για MinorCPU model εκτελέσαμε την εντολή:
 
-```./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
@@ -145,7 +149,7 @@ return 0;
 
 **->** Για TimingSimpleCPU model εκτελέσαμε την εντολή:
 
-```./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
@@ -159,7 +163,7 @@ return 0;
 
 **->** Για MinorCPU model εκτελέσαμε την εντολή:
 
-```./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --mem-type=DDR4_2400_16x4 --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --mem-type=DDR4_2400_16x4 --caches -c tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
@@ -171,7 +175,7 @@ return 0;
 
 **->** Για TimingSimpleCPU model εκτελέσαμε την εντολή:
 
-```./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_16x4 --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_16x4 --caches -c tests/test-progs/hello/bin/arm/linux/myprogram_arm```
 
 Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
 
