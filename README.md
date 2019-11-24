@@ -56,11 +56,12 @@
 
 ```"cache_line_size": 64```
 
-**d.Μνήμη**: 2GB
+**d.Μνήμη**: 2GB (2^31, 2 channels)
 
 **config.ini**:
 
 ```mem_ranges=0:2147483647```
+```memories=system.mem_ctrls0 system.mem_ctrls1```
 
 **config.json**:
 
