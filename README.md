@@ -36,8 +36,6 @@
 
 **config.json**:
 
-```"cpus": ```
-
 ```"type": "MinorCPU"```
 
 **b.Συχνότητα Λειτουργίας**: 4GHz(το clock μετράει σε ns)
@@ -48,7 +46,7 @@
 
 **config.json**:
 
-```"clk_domain": "name": "clk_domain","clock": [250]```
+```"clock": [250]```
 
 **d.Caches**:64 bytes
 
