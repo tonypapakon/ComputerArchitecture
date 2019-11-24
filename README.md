@@ -46,7 +46,7 @@
 
 ```"clock": [250]```
 
-**c.Caches**:64 bytes
+**c.Caches**: 64 bytes
 
 **config.ini**:
 
@@ -56,7 +56,7 @@
 
 ```"cache_line_size": 64```
 
-**d.Μνήμη**:2GB
+**d.Μνήμη**: 2GB
 
 **config.ini**:
 
