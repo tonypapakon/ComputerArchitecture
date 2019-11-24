@@ -1,3 +1,5 @@
+![Image description](https://arch.cs.ucdavis.edu/assets/images/gem5-logo.png)
+
 # Εργασία Πρώτου Εργαστηρίου Αρχιτεκτονικής Υπολογιστών
 
 **Παπακωνσταντίνου Αντώνης, ΑΕΜ 8977**
