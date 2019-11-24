@@ -32,8 +32,6 @@
 
 **config.ini**:
 
-```[system.cpu_cluster.cpus]```
-
 ```type=MinorCPU```
 
 **config.json**:
@@ -46,31 +44,31 @@
 
 **config.ini**:
 
-```[system.cpu_cluster.clk_domain]```
-
 ```clock=250```
 
 **config.json**:
 
-```"clk_domain": {```
-
-  ``` "name": "clk_domain",```
-       
- ```  "clock": [```
-       
-  ``` 250```
+```"clk_domain": "name": "clk_domain","clock": [250]```
 
 **d.Caches**:64 bytes
 
 **config.ini**:
 
+```cache_line_size=64```
+
 **config.json**:
 
-**e.Μνήμη**:2GB, DDR3_1600_8x8
+```"cache_line_size": 64```
+
+**e.Μνήμη**:2GB
 
 **config.ini**:
 
+```mem_ranges=0:2147483647```
+
 **config.json**:
+
+``` "mem_ranges": ["0:2147483647"]```
 
 Ερώτημα 3
 Ερώτημα 3a
