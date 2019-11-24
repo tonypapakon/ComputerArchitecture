@@ -10,7 +10,7 @@
 
 ```$ ./build/ARM/gem5.opt configs/example/arm/starter_se.py --cpu="minor" "tests/test-progs/hello/bin/arm/linux/hello"```
 
-### Ερώτημα 1
+### Ερώτημα 1.
 
 Καταγραφή βασικών χαρακτηριστικών στυστήματος από το starter_se.py για την εξομοίωση του Gem5:
 
@@ -22,7 +22,7 @@
 
 **d.Μνήμη**: Το μέγεθος της φυσικής μνήμης είναι η default τιμή η οποία είναι 2GB, το είδος της κύριας μνήμης είναι πάλι το default και είναι DDR3_1600_8x8 (συχνότητα λειτουργίας: 1600MHz, 2 channels).
 
-### Ερώτημα 2
+### Ερώτημα 2.
 
 Στο ερώτημα αυτό θα επαληθεύσουμε τα αποτελέσματα του πρώτου ερωτήματος κάνοντας μελέτη των αρχείων config.ini και config.json και θα παραθέσουμε τα αντίστοιχα πεδία.
 
@@ -66,7 +66,7 @@
 
 ``` "mem_ranges": ["0:2147483647"]```
 
-### Ερώτημα 3
+### Ερώτημα 3.
 
 Μετά από αναζήτηση στο site του Gem5 (gem5.org) θα παρουσιάσουμε κάποια στοιχεία για in-order CPUs στο gem5. Παρατηρήσαμε ότι υπάρχουν τρία μοντέλα in-order CPUs: το MinorCPU, το TimingSimpleCPU και το AtomicSimpleCPU, με τα τελευταία δυο να βασίζονται στο SimpleCPU. 
 
@@ -79,7 +79,7 @@
 **3.AtomicSimpleCPU**:
 
 
-#### Ερώτημα 3a
+#### Ερώτημα 3.a/b
 
 Παραθέτουμε το πρόγραμμα που γράψαμε σε C (επίσης βρίσκεται και στο repository στο git μας):
 
@@ -112,3 +112,59 @@ int main(){
 ```sim_seconds                                  0                       # Number of seconds simulated```
 
 Παρατηρούμε ότι η εξομοίωση με MinorCPU model τρέχει πιο γρήγορα στον εξομοιωτή απ αυτήν του TimingSimpleCPU, το οποίο είναι λογικό αποτέλεσμα καθώς το MinorCPU model χρησιμοποιεί pipeline στην εκτέλεση των εντολών.
+
+#### Ερώτημα 3.c
+
+Σ αυτό το ερώτημα χρησιμοποιήσαμε πάλι τα μοντέλα του MinorCPU, καθώς και του TimingSimpleCPU αλλάζοντας πρώτα την συχνότητα λειτουργίας του επεξεργαστή και μετά αλλάζοντας την τεχνολογία της μνήμης.
+
+**Συχνότητα λειτουργίας: 4GHz**
+
+**->** Για MinorCPU model εκτελέσαμε την εντολή:
+
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+
+Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
+
+```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+
+```sim_seconds                                  0                       # Number of seconds simulated```
+
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+
+**->** Για TimingSimpleCPU model εκτελέσαμε την εντολή:
+
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --cpu-clock=4GHz --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+
+Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
+
+```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+
+```sim_seconds                                  0                       # Number of seconds simulated```
+
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+
+**Τεχνολογία Μνήμης: DDR4_2400_16x4**
+
+**->** Για MinorCPU model εκτελέσαμε την εντολή:
+
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --mem-type=DDR4_2400_16x4 --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+
+Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
+
+```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+
+```sim_seconds                                  0                       # Number of seconds simulated```
+
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
+
+**->** Για TimingSimpleCPU model εκτελέσαμε την εντολή:
+
+```./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_16x4 --caches -c tests/test-progs/hello/bin/arm/linux/myprog```
+
+Μελετάμε το αρχείο stats.txt, για τυχών αλλαγές στους χρόνους εκτέλεσης και παραθέτουμε τα αποτελέσματα παρακάτω:
+
+```final_tick                                   3                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)```
+
+```sim_seconds                                  0                       # Number of seconds simulated```
+
+Παρατηρούμε βελτίωση στον χρόνο εκτέλεσης από      σε     .
