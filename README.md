@@ -1,8 +1,8 @@
 # Εργασία Πρώτου Εργαστηρίου Αρχιτεκτονικής Υπολογιστών
 
-**Παπακωνσταντίνου Αντώνης ΑΕΜ 8977**
+**Παπακωνσταντίνου Αντώνης, ΑΕΜ 8977**
 
-**Κασιούλης Φίλιππος ΑΕΜ**
+**Κασιούλης Φίλιππος, ΑΕΜ**
 
 ## Ερωτήματα Πρώτου Μέρους
 
@@ -68,8 +68,7 @@
 
 ``` "mem_ranges": ["0:2147483647"]```
 
-Ερώτημα 3
-Ερώτημα 3a
+### Ερώτημα 3
 
 Σε αυτό το ερώτημα θα παρουσιάσουμε κάποια στοιχεία για τα in-order CPU models που περιέχει ο gem5.
 
@@ -122,95 +121,7 @@ H DPU περιέχει γενικού σκοπού καταχωρητές και
 6.Level 2 σύστημα μνήμης(Level 2 memory system)
 
 Αποτελείται από το Snoop Control Unit (SCU),Coherence Bus Interface και την L2 cache.
-Ερώτημα 3b
 
-Σε αυτό το ερώτημα τρέξαμε στο gem5 μία εξομοίωση με ορίσματα αυτά που δίνονται στο αρχείο se.py και εκτελέσαμε το πρόγραμμα prog_arm(τον πηγαίο κώδικα θα τον βρείτε στο repository μας στο github με το όνομα prog.c).Την παραπάνω εξομοίωση της τρέξαμε δύο φορές,την μία δίνοντας ως όρισμα από την γραμμή εντολών να χρησιμοποιηθεί MinorCPU model και την άλλη TimingSimpleCPU model.
+#### Ερώτημα 3a
 
-Για να εκτελεστεί η εξομοίωση με MinorCPU model δώσαμε την εντολή:
 
-    ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches -c /home/uglynick/my_gem5/prog_arm
-
-Και μελετώντας το αρχείο stats.txt(θα το βρείτε στο repository μας στο github με το όνομα stats_minor_cpu_model.txt) εντοπίσαμε τα εξής αποτελέσματα ως αναφορά τους χρόνους εκτέλεσης:
-
-    final_tick 39328000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-
-    sim_seconds 0.000039 # Number of seconds simulated
-
-    sim_ticks 39328000 # Number of ticks simulated
-
-Για να εκτελεστεί η εξομοίωση με TimingSimpleCPU model δώσαμε την εντολή:
-
-    ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches -c /home/uglynick/my_gem5/prog_arm
-
-Και μελετώντας το αρχείο stats.txt(θα το βρείτε στο repository μας στο github με το όνομα stats_timing_simple_cpu_model.txt) εντοπίσαμε τα εξής αποτελέσματα ως αναφορά τους χρόνους εκτέλεσης:
-
-    final_tick 49082000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-
-    sim_seconds 0.000049 # Number of seconds simulated
-
-    sim_ticks 49082000 # Number of ticks simulated
-
-Βλέπουμε ότι η εξομοίωση με MinorCPU model είναι ταχύτερη από αυτήν με TimingSimpleCPU model το οποίο είναι αναμενόμενο λόγω του ότι το MinorCPU model χρησιμοποιεί pipeline στην εκτέλεση των εντολών αλλά και caches.
-Ερώτημα 3c
-
-Σε αυτό το ερώτημα τρέξαμε τις ίδιες εξομοιώσεις όπως στο ερώτημα 3b απλά αυτήν τη φορά αλλάξαμε,μέσω της γραμμής εντολών την συχνότητα λειτουργίας του επεξεργαστή και την τεχνολογία μνήμης.Παρακάτω παρουσιάζουμε πως αυτές οι αλλαγές που κάναμε επηρεάσανε την εξομοίωση.
-
-Αρχικά,ορίσαμε την συχνότητα λειτουργίας του επεξεργαστή σε MinorCPU μοντέλο,στα 4GHz δίνοντας την εντολή:
-
-    ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --cpu-clock=4GHz --caches -c /home/uglynick/my_gem5/prog_arm
-
-όπως ήταν αναμενόμενο μελετώντας το αρχείο stats.txt της εξομοίωσης βλέπουμε σημαντική βελτίωση στον χρόνο από 0.000039s σε 0.000034s όπως βλέπουμε και παρακάτω:
-
-    final_tick 33544000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-
-    sim_seconds 0.000034 # Number of seconds simulated
-
-    sim_ticks 33544000 # Number of ticks simulated
-
-Αρχικά,ορίσαμε την τεχνολογία μνήμης του επεξεργαστή σε MinorCPU μοντέλο,σε DDR4_2400_16x4 με την εντολή:
-
-    ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --mem-type=DDR4_2400_16x4 --caches -c /home/uglynick/my_gem5/prog_arm
-
-και πάλι βλέπουμε βελτίωση στον χρόνο μικρότερης τάξης από πριν,από 0.000039s σε 0.000038s:
-
-    final_tick 37907000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-
-    sim_seconds 0.000038 # Number of seconds simulated
-
-    sim_ticks 37907000 # Number of ticks simulated
-
-Αντίστοιχα για TimingSimpleCPU μοντέλο ορίσαμε πρώτα την συχνότητα λειτουργίας του επεξεργαστή στα 4GHz με την εντολή:
-
-    ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --cpu-clock=4GHz --caches -c /home/uglynick/my_gem5/prog_arm
-
-και παρατηρήσαμε βελτίωση στον χρόνο,αντίστοιχη με το MinorCPU μοντέλο και ακόμα καλύτερη,από 0.000049s στα 0.000037s.
-
-    final_tick 37071500 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-
-    sim_seconds 0.000037 # Number of seconds simulated
-
-    sim_ticks 37071500 # Number of ticks simulated
-
-Τέλος,ορίσαμε την τεχνολογία μνήμης με την εντολή:
-
-    ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --mem-type=DDR4_2400_16x4 --caches -c /home/uglynick/my_gem5/prog_arm
-
-και παρατηρήσαμε σαφώς μικρότερη βελτίωση,από 0.000049s στα 0.000048s:
-
-    final_tick 48346000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-
-    sim_seconds 0.000048 # Number of seconds simulated
-
-    sim_ticks 48346000 # Number of ticks simulated
-
-Λίγα λόγια από εμάς
-
-Η συγκεκριμένη εργασία ήταν μία πολύ καλή αφορμή για έμας να μάθουμε και να εξοικειωθούμε με κάποια στοιχεία του gem5 και σαν διαδικασία ήταν απολαυστική.Επίσης,μας έδωσε μία καλύτερη οπτική πάνω στο πως η αρχιτεκτονική κάποιων στοιχείων του hardware επηρεάζει την απόδοση του υπολογιστή μας.Φυσικά,οι απαντήσεις στα παραπάνω ερώτηματα προήλθαν από δικιά μας έρευνα και εξαγωγή συμπερασμάτων και όντας αρχαριοί πιστεύουμε ότι θα υπάρχουν και πολλές αστοχίες τις οποίες θα θέλαμε να μας τις επισημάνεται.Ένα πράγμα που θα ήταν καλό να είχε περιληφθεί στην εκφώνηση της εργασίας θα ήταν να υπήρχε κάποια σύσταση ως προς τους πόσους λογικούς επεξεργαστες(εντολή scons -jN) θα ήταν καλύτερο να επιτρέψουμε στο Vitrual Machine(VM) να χρησιμοποιεί.Μία ασάφεια που εντοπίσαμε στην εκφώνηση της εργασίας ήταν στην δεύτερη σελίδα όπου μας δίνονται οι εντολές για εγκατάσταση του gem5 και συγκεκριμένα στην εντολή:
-
-    $ sudo apt install z1ib1g z1ib1g-dev z1ibc
-
-όπου κανονικά είναι έτσι:
-
-    $ sudo apt install zlib1g zlib1g-dev zlibc
-
-δηλαδή αν κάποιος έγραφε τις εντολές στο terminal μόνος ενώ κοιτούσε και την εκφώνηση δεν θα μπορούσε να ξεχωρίσει τους άσσους(1) από το σύμβολο l. Σε γενικές γραμμές απολαύσαμε την έρευνα και το διάβασμα που κάναμε σχετικά με τον gem5 και συγνώμη για τυχόν εσφαλμένα συμπεράσματα που μπορεί να βγάλαμε μέσω αυτής.
