@@ -1,4 +1,4 @@
-<img src="https://arch.cs.ucdavis.edu/assets/images/gem5-logo.png" alt="Gem5-logo" align="middle" width="250"/>
+<center><img src="https://arch.cs.ucdavis.edu/assets/images/gem5-logo.png" alt="Gem5-logo" width="250"/></center>
 
 # Εργασία Πρώτου Εργαστηρίου Αρχιτεκτονικής Υπολογιστών
 
