@@ -129,31 +129,31 @@
 
 Στο ερώτημα αυτό τρέξαμε πάλι κάθε benchmark που μας δόθηκε πειράζοντας κάθε φορά την παράμετρο για την μνήμη cache του εξομοιωτή. Πήραμε τα εξής διαγράμματα:
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1ICacheSize.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1ICacheSize.png)
 
 1. L1I Cache Size: Απ'το διάγραμμα παρατηρούμε ότι μόνο το **429.mcf** επηρεάζεται απ'την αλλαγή του L1I Size και αιτιολογείται απ'το γεγονός ότι έχει αυξημένο αριθμό Accesses στην L1I.
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1IAssociativity.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1IAssociativity.png)
 
 2. L1I Cache Associativity: Απ'το διάγραμμα παρατηρούμε ότι δεν υπάρχει ιδιαίτερη βελτίωση σε κανένα από τα benchmarks κάτι που το διαπιστώσαμε και σε προηγούμενο ερώτημα, ότι το L1I δεν επιρεάζει το CPI όπως το L1D και L2.
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1DCacheSize.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1DCacheSize.png)
 
 3. L1D Cache Size: Απ'το διάγραμμα βλέπουμε ότι το **401.bzip2** έχει βελτίωση όσο αυξάνουμε το μέγεθος της μνήμης άρα παρατηρούμε ότι το benchmark αυτό έχει πολλά `capacity misses`, σε αντίθεση με τα υπόλοιπα benchmarks που δεν παρατηρούμε διαφορές στο CPI τους, άρα δεν υπάρχει σημαντικός αριθμός από `capacity misses`.
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1DAssociativity.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L1DAssociativity.png)
 
 4. L1D Cache Associativity: Απ'το διάγραμμα βλέπουμε ότι πάλι το **401.bzip2** έχει βελτίωση όσο αυξάνουμε το associativity του άρα παρατηρούμε ότι το benchmark αυτό έχει πολλά `conflict misses` κατί που και πάλι δεν ισχύει στα υπόλοιπα benchmarks.
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L2CacheSize.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L2CacheSize.png)
 
 5. L2 Cache Size: Απ'το διάγραμμα βλέπουμε ότι το **401.bzip2** έχει μια βελτίωση. Το **429.mcf** ενώ ξεκίνησε να έχει βελτίωση στην αρχή μετά έμεινε σταθερό. Στα υπόλοιπα benchmarks δεν παρατηρήθηκε καμία βελτίωση. 
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L2Associativity.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/L2Associativity.png)
 
 6. L2 Cache Associativity: Απ'το διάγραμμα παρατηρούμε ότι και πάλι το **401.bzip2** έχει μια βελτίωση και πως ενώ το **429.mcf** ξεκίνησε με βελτίωση στην συνέχεια δεν παρατηρήθηκε τίποτα.
 
-https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/CacheLineSize.png
+![](https://github.com/tonypapakon/ComputerArchitecture/blob/master/ComputerArchitecture_Lab2/GRAPHS/STEP2/CacheLineSize.png)
 
 7. Cache Line Size: Απ'το διάγραμμα βλέπουμε ότι την μεγαλύτερη βελτίωση την είδε το **458.sjeng** και το **470.lbm** κάτι που μας δείχνει ότι έχουμε μεγάλο `locality`, μικρή αλλά σημαντική βελτίωση έδειξαν και τα **401.bzip2** και **429.mcf**. Τέλος δεν παρατηρήθηκε κάποια σημαντική βελτίωση στο **456.hmmer** επομένως δεν έχει καθόλου `locality`.
 
