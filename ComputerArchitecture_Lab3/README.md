@@ -22,12 +22,18 @@
 
 Τρέχουμαι το McPAT για τον Xeon (Xeon.xml) και για τον ARM A9 (ARM_A9_2GHz.xml) και παρουσιάζουμε τα αποτελέσματα στο πιο κάτω πίνακα.
 
-|        | **Xeon** |**Leakage**| 
+|        | **Xeon** |**Arm A9**| 
 |---|---|---|
 |  Total Leakage |36.8319 W|0.108687 W| 
 | RunTime Dynamic|72.9199 W|2.96053  W| 
 
 Ας παρουμέ για παράδειγμα ότι ο Α9 απαιτεί χρόνο 40t sec για ένα πρόγραμμα, τότε ο Xeon θα τρέξει το ίδιο πρόγραμμα σε t sec.
-Aρά η ένεργεια που θα καταναλώσει ο Α9 είναι > 40t*(dynamic+leakage)=122.72t Joule και η αντιστοιχή του Xeon στο ίδιο χρόνο  > (dynamic+leakage)*+39t*leakage=1546t Joule.Αρά οπως βλέπουμε ο Xeon δεν θα μπορέσει να είναι πιο energy efficient απο το Α9 .
+Aρά η ένεργεια που θα καταναλώσει ο Α9 είναι  `40t*(dynamic+leakage)=122.72t Joule` και η αντιστοιχή του Xeon στο ίδιο χρόνο  
+`dynamic+leakage)*+39t*leakage=1546t Joule`. Αρά οπως βλέπουμε ο Xeon δεν θα μπορέσει να είναι πιο energy efficient απο το Α9 .
 
 
+- **Ερώτημα 2.1.**
+
+Η τιμη του **delay**  μπορεί να φανεί απο το  CPI(Cycles Per Instruction)
+
+Η τιμή του **energy** εξάγεται από το χρόνο λειτουργίας του συστήματος απο το αρχείο stats.txt (sim_seconds) του gem5 σε συνδυασμό με το Total Power Consuption(Total Leakage+RunTime Dynamic) απο το McPAT.Αρά η συνολίκη ενέργεια  είναι ` Total_Energy= Total_Power_Consumption * Total_Time`.
